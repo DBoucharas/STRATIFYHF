@@ -1,0 +1,1740 @@
+@prefix : <http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#################################################################
+# Ontology metadata (FAIRsharing-ready)
+#################################################################
+
+<http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology>
+    a owl:Ontology ;
+
+    dcterms:title "StratifyHF Ontology" ;
+    dcterms:description "Ontology developed for heart failure diagnosis and risk stratification, integrating clinical, digital, and patient-reported measures." ;
+    dcterms:creator "Dimitrios Boucharas, Dimitrios Manousos, FORTH" ;
+
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+
+    owl:versionInfo "1.0.0" ;
+    owl:versionIRI <http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology/1.0.0> .
+
+#################################################################
+# Annotation properties
+#################################################################
+
+:loincCode rdf:type owl:AnnotationProperty .
+:unit rdf:type owl:AnnotationProperty .
+:stratifyhfCode rdf:type owl:AnnotationProperty .
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#Active
+:Active rdf:type owl:DatatypeProperty ;
+        rdfs:domain :PhysicalActivity ;
+        rdfs:range xsd:integer ;
+        :snomedCode "390736008" ;
+        :unit "s" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#AlanineAminotransferase
+:AlanineAminotransferase rdf:type owl:DatatypeProperty ;
+                         rdfs:domain :BloodMarkers ;
+                         rdfs:range xsd:float ;
+                         :loincCode "1742-6" ;
+                         :unit "U/L" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#Alcohol
+:Alcohol rdf:type owl:DatatypeProperty ;
+         rdfs:domain :PatientHistory ;
+         rdfs:range xsd:boolean ;
+         :snomedCode "365967005" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#AorticValveRegurgitation
+:AorticValveRegurgitation rdf:type owl:DatatypeProperty ;
+                          rdfs:domain :Electrocardiography ;
+                          rdfs:range xsd:boolean ;
+                          :snomedCode "60234000" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#AspartateAminotransferase
+:AspartateAminotransferase rdf:type owl:DatatypeProperty ;
+                           rdfs:domain :BloodMarkers ;
+                           rdfs:range xsd:float ;
+                           :loincCode "1920-8" ;
+                           :unit "U/L" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#Atelectasis
+:Atelectasis rdf:type owl:DatatypeProperty ;
+             rdfs:domain :ChestXRay ;
+             rdfs:range xsd:boolean ;
+             :snomedCode "46621007" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#AtrialFibrilation
+:AtrialFibrilation rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :Electrocardiography ;
+                   rdfs:range xsd:boolean ;
+                   :snomedCode "49436004" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#Bilirubin
+:Bilirubin rdf:type owl:DatatypeProperty ;
+           rdfs:domain :BloodMarkers ;
+           rdfs:range xsd:float ;
+           :loincCode "1975-2" ,
+                      "mg/dL" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#BodyMassIndex
+:BodyMassIndex rdf:type owl:DatatypeProperty ;
+               rdfs:domain :PhysicalExamination ;
+               rdfs:range xsd:float ;
+               :loincCode "39156-5" ;
+               :unit "kg/m2" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#BreathingDifficulty
+:BreathingDifficulty rdf:type owl:DatatypeProperty ;
+                     rdfs:domain :PatientHistory ;
+                     rdfs:range xsd:boolean ;
+                     :snomedCode "230145002" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#CReactiveProtein
+:CReactiveProtein rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :BloodMarkers ;
+                  rdfs:range xsd:float ;
+                  :loincCode "1988-5" ;
+                  :unit "mg/L" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#Caffeine
+:Caffeine rdf:type owl:DatatypeProperty ;
+          rdfs:domain :PatientHistory ;
+          rdfs:range xsd:boolean ;
+          :snomedCode "226382001" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#Calories
+:Calories rdf:type owl:DatatypeProperty ;
+          rdfs:domain :PhysicalActivity ;
+          rdfs:range xsd:integer ;
+          :snomedCode "390736008" ;
+          :unit "Kcal" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#CardiothoraticRatio
+:CardiothoraticRatio rdf:type owl:DatatypeProperty ;
+                     rdfs:domain :ChestXRay ;
+                     rdfs:range xsd:float ;
+                     :stratifyhfCode "CXR002" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#ChestPain
+:ChestPain rdf:type owl:DatatypeProperty ;
+           rdfs:domain :Symptoms ;
+           rdfs:range xsd:boolean ;
+           :snomedCode "29857009" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#ChestPainFrequency
+:ChestPainFrequency rdf:type owl:DatatypeProperty ;
+                    rdfs:domain :SymptomsLogging ;
+                    rdfs:range xsd:integer ;
+                    :snomedCode "29857009" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#ChestPainNotes
+:ChestPainNotes rdf:type owl:DatatypeProperty ;
+                rdfs:domain :SymptomsLogging ;
+                rdfs:range xsd:string ;
+                :snomedCode "29857009" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#ChestPainSeverity
+:ChestPainSeverity rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :SymptomsLogging ;
+                   rdfs:range xsd:integer ;
+                   :snomedCode "29857009" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#Cholesterol
+:Cholesterol rdf:type owl:DatatypeProperty ;
+             rdfs:domain :BloodMarkers ;
+             rdfs:range xsd:float ;
+             :loincCode "2093-3" ;
+             :unit "mg/dL" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#CholesterolHDL
+:CholesterolHDL rdf:type owl:DatatypeProperty ;
+                rdfs:domain :BloodMarkers ;
+                rdfs:range xsd:float ;
+                :loincCode "2085-9" ;
+                :unit "mg/dL" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#CholesterolLDL
+:CholesterolLDL rdf:type owl:DatatypeProperty ;
+                rdfs:domain :BloodMarkers ;
+                rdfs:range xsd:float ;
+                :loincCode "2089-1" ;
+                :unit "mg/dL" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#ChronicCough
+:ChronicCough rdf:type owl:DatatypeProperty ;
+              rdfs:domain :SymptomsLogging ;
+              rdfs:range xsd:boolean ;
+              :snomedCode "68154008" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#ChronicCoughFrequency
+:ChronicCoughFrequency rdf:type owl:DatatypeProperty ;
+                       rdfs:domain :SymptomsLogging ;
+                       rdfs:range xsd:integer ;
+                       :snomedCode "68154008" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#ChronicCoughNotes
+:ChronicCoughNotes rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :SymptomsLogging ;
+                   rdfs:range xsd:string ;
+                   :snomedCode "68154008" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#ChronicCoughSeverity
+:ChronicCoughSeverity rdf:type owl:DatatypeProperty ;
+                      rdfs:domain :SymptomsLogging ;
+                      rdfs:range xsd:integer ;
+                      :snomedCode "68154008" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#CirculationIssues
+:CirculationIssues rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :PatientHistory ;
+                   rdfs:range xsd:boolean ;
+                   :stratifyhfCode "PHS001" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#Claudication
+:Claudication rdf:type owl:DatatypeProperty ;
+              rdfs:domain :SymptomsLogging ;
+              rdfs:range xsd:boolean ;
+              :snomedCode "792845002" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#ClaudicationFrequency
+:ClaudicationFrequency rdf:type owl:DatatypeProperty ;
+                       rdfs:domain :SymptomsLogging ;
+                       rdfs:range xsd:integer ;
+                       :snomedCode "792845002" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#ClaudicationNotes
+:ClaudicationNotes rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :SymptomsLogging ;
+                   rdfs:range xsd:string ;
+                   :snomedCode "792845002" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#ClaudicationSeverity
+:ClaudicationSeverity rdf:type owl:DatatypeProperty ;
+                      rdfs:domain :SymptomsLogging ;
+                      rdfs:range xsd:integer ;
+                      :snomedCode "792845002" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#Cough
+:Cough rdf:type owl:DatatypeProperty ;
+       rdfs:domain :Symptoms ;
+       rdfs:range xsd:boolean ;
+       :snomedCode "49727002" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#Creatinine
+:Creatinine rdf:type owl:DatatypeProperty ;
+            rdfs:domain :BloodMarkers ;
+            rdfs:range xsd:float ;
+            :loincCode "2160-0" ;
+            :unit "mg/dL" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#DateEnrolled
+:DateEnrolled rdf:type owl:DatatypeProperty ;
+              rdfs:domain :Demographics ;
+              rdfs:range xsd:dateTime ;
+              :stratifyhfCode "DMG002" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#DateOfBirth
+:DateOfBirth rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Demographics ;
+             rdfs:range xsd:dateTime ;
+             :snomedCode "184099003" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#DeepSleepDuration
+:DeepSleepDuration rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :SleepQuality ;
+                   rdfs:range xsd:integer ;
+                   :stratifyhfCode "SLQ014" ;
+                   :unit "s" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#Diabetes
+:Diabetes rdf:type owl:DatatypeProperty ;
+          rdfs:domain :PatientHistory ;
+          rdfs:range xsd:boolean ;
+          :snomedCode "44054006" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#DiagnosisConsent
+:DiagnosisConsent rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :Diagnosis ;
+                  rdfs:range xsd:boolean ;
+                  :stratifyhfCode "DAI008" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#DiagnosisExecutionEnvironment
+:DiagnosisExecutionEnvironment rdf:type owl:DatatypeProperty ;
+                               rdfs:domain :Diagnosis ;
+                               rdfs:range xsd:string ;
+                               :stratifyhfCode "DAI004" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#DiagnosisExecutionTimestamp
+:DiagnosisExecutionTimestamp rdf:type owl:DatatypeProperty ;
+                             rdfs:domain :Diagnosis ;
+                             rdfs:range xsd:dateTime ;
+                             :stratifyhfCode "DAI005" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#DiagnosisInference
+:DiagnosisInference rdf:type owl:DatatypeProperty ;
+                    rdfs:domain :Diagnosis ;
+                    rdfs:range xsd:integer ;
+                    :stratifyhfCode "DAI007" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#DiagnosisManufacturer
+:DiagnosisManufacturer rdf:type owl:DatatypeProperty ;
+                       rdfs:domain :Diagnosis ;
+                       rdfs:range xsd:string ;
+                       :stratifyhfCode "DAI003" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#DiagnosisModelName
+:DiagnosisModelName rdf:type owl:DatatypeProperty ;
+                    rdfs:domain :Diagnosis ;
+                    rdfs:range xsd:string ;
+                    :stratifyhfCode "DAI001" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#DiagnosisModelTrainingDate
+:DiagnosisModelTrainingDate rdf:type owl:DatatypeProperty ;
+                            rdfs:domain :Diagnosis ;
+                            rdfs:range xsd:dateTime ;
+                            :stratifyhfCode "DAI009" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#DiagnosisModelVersion
+:DiagnosisModelVersion rdf:type owl:DatatypeProperty ;
+                       rdfs:domain :Diagnosis ;
+                       rdfs:range xsd:string ;
+                       :stratifyhfCode "DAI002" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#DiagnosisPredictedProbabilityOrConfidence
+:DiagnosisPredictedProbabilityOrConfidence rdf:type owl:DatatypeProperty ;
+                                           rdfs:domain :Diagnosis ;
+                                           rdfs:range xsd:string ;
+                                           :stratifyhfCode "DAI006" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#DiastolicBloodPressure
+:DiastolicBloodPressure rdf:type owl:DatatypeProperty ;
+                        rdfs:domain :Hemodynamics ;
+                        rdfs:range xsd:float ;
+                        :loincCode "8462-4" ;
+                        :unit "mm[Hg]" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#Distance
+:Distance rdf:type owl:DatatypeProperty ;
+          rdfs:domain :PhysicalActivity ;
+          rdfs:range xsd:integer ;
+          :snomedCode "390736008" ;
+          :unit "m" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#Dizziness
+:Dizziness rdf:type owl:DatatypeProperty ;
+           rdfs:domain :SymptomsLogging ;
+           rdfs:range xsd:boolean ;
+           :snomedCode "404640003" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#DizzinessFrequency
+:DizzinessFrequency rdf:type owl:DatatypeProperty ;
+                    rdfs:domain :SymptomsLogging ;
+                    rdfs:range xsd:integer ;
+                    :snomedCode "404640003" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#DizzinessNotes
+:DizzinessNotes rdf:type owl:DatatypeProperty ;
+                rdfs:domain :SymptomsLogging ;
+                rdfs:range xsd:string ;
+                :snomedCode "404640003" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#DizzinessSeverity
+:DizzinessSeverity rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :SymptomsLogging ;
+                   rdfs:range xsd:integer ;
+                   :snomedCode "404640003" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#DurationOfActivity
+:DurationOfActivity rdf:type owl:DatatypeProperty ;
+                    rdfs:domain :PatientHistory ;
+                    rdfs:range xsd:integer ;
+                    :snomedCode "68130003" ;
+                    :unit "min" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#DurationToSleep
+:DurationToSleep rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :SleepQuality ;
+                 rdfs:range xsd:integer ;
+                 :stratifyhfCode "SLQ003" ;
+                 :unit "s" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#DurationToWakeUp
+:DurationToWakeUp rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :SleepQuality ;
+                  rdfs:range xsd:integer ;
+                  :stratifyhfCode "SLQ004" ;
+                  :unit "s" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#Dyspnea
+:Dyspnea rdf:type owl:DatatypeProperty ;
+         rdfs:domain :Symptoms ;
+         rdfs:range xsd:boolean ;
+         :snomedCode "267036007" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#DyspneaFrequency
+:DyspneaFrequency rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :SymptomsLogging ;
+                  rdfs:range xsd:integer ;
+                  :snomedCode "267036007" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#DyspneaNotes
+:DyspneaNotes rdf:type owl:DatatypeProperty ;
+              rdfs:domain :SymptomsLogging ;
+              rdfs:range xsd:string ;
+              :snomedCode "267036007" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#DyspneaSeverity
+:DyspneaSeverity rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :SymptomsLogging ;
+                 rdfs:range xsd:integer ;
+                 :snomedCode "267036007" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#ECGSignal
+:ECGSignal rdf:type owl:DatatypeProperty ;
+           rdfs:domain :OnDemandMeasures ;
+           rdfs:range xsd:string ;
+           :snomedCode "250865004" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#EdemaPeripheral
+:EdemaPeripheral rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :Symptoms ;
+                 rdfs:range xsd:boolean ;
+                 :snomedCode "271809000" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#Elevation
+:Elevation rdf:type owl:DatatypeProperty ;
+           rdfs:domain :PhysicalActivity ;
+           rdfs:range xsd:integer ;
+           :snomedCode "390736008" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#EstimatedGlomerularFiltrationRate
+:EstimatedGlomerularFiltrationRate rdf:type owl:DatatypeProperty ;
+                                   rdfs:domain :BloodMarkers ;
+                                   rdfs:range xsd:float ;
+                                   :loincCode "98979-8" ;
+                                   :unit "mL/min/1.73.m2" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#FEV1MeasuredPredicted
+:FEV1MeasuredPredicted rdf:type owl:DatatypeProperty ;
+                       rdfs:domain :Spirometry ;
+                       rdfs:range xsd:float ;
+                       :loincCode "20152-5" ;
+                       :unit "%" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#FamilyDiabetes
+:FamilyDiabetes rdf:type owl:DatatypeProperty ;
+                rdfs:domain :FamilyHistory ;
+                rdfs:range xsd:boolean ;
+                :snomedCode "44054006" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#FamilyHeartDisease
+:FamilyHeartDisease rdf:type owl:DatatypeProperty ;
+                    rdfs:domain :FamilyHistory ;
+                    rdfs:range xsd:boolean ;
+                    :snomedCode "49601007" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#ForcedExpiratoryVolumeInOneSec
+:ForcedExpiratoryVolumeInOneSec rdf:type owl:DatatypeProperty ;
+                                rdfs:domain :Spirometry ;
+                                rdfs:range xsd:float ;
+                                :loincCode "20150-9" ;
+                                :unit "L" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#ForcedVitalCapacity
+:ForcedVitalCapacity rdf:type owl:DatatypeProperty ;
+                     rdfs:domain :Spirometry ;
+                     rdfs:range xsd:float ;
+                     :loincCode "19870-5" ;
+                     :unit "L" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#FrequencyOfActivity
+:FrequencyOfActivity rdf:type owl:DatatypeProperty ;
+                     rdfs:domain :PatientHistory ;
+                     rdfs:range xsd:integer ;
+                     :snomedCode "68130003" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#GammaGlutamylTransferase
+:GammaGlutamylTransferase rdf:type owl:DatatypeProperty ;
+                          rdfs:domain :BloodMarkers ;
+                          rdfs:range xsd:float ;
+                          :loincCode "2324-2" ;
+                          :unit "U/L" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#Glucose
+:Glucose rdf:type owl:DatatypeProperty ;
+         rdfs:domain :BloodMarkers ;
+         rdfs:range xsd:float ;
+         :loincCode "2339-0" ;
+         :unit "mg/dL" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#HRAverage
+:HRAverage rdf:type owl:DatatypeProperty ;
+           rdfs:domain :PhysicalActivity ;
+           rdfs:range xsd:integer ;
+           :snomedCode "390736008" ;
+           :unit "/min" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#HRMax
+:HRMax rdf:type owl:DatatypeProperty ;
+       rdfs:domain :PhysicalActivity ;
+       rdfs:range xsd:integer ;
+       :snomedCode "390736008" ;
+       :unit "/min" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#HRMin
+:HRMin rdf:type owl:DatatypeProperty ;
+       rdfs:domain :PhysicalActivity ;
+       rdfs:range xsd:integer ;
+       :snomedCode "390736008" ;
+       :unit "/min" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#HRZone0
+:HRZone0 rdf:type owl:DatatypeProperty ;
+         rdfs:domain :PhysicalActivity ;
+         rdfs:range xsd:integer ;
+         :snomedCode "390736008" ;
+         :unit "/min" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#HRZone1
+:HRZone1 rdf:type owl:DatatypeProperty ;
+         rdfs:domain :PhysicalActivity ;
+         rdfs:range xsd:integer ;
+         :snomedCode "390736008" ;
+         :unit "/min" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#HRZone2
+:HRZone2 rdf:type owl:DatatypeProperty ;
+         rdfs:domain :PhysicalActivity ;
+         rdfs:range xsd:integer ;
+         :snomedCode "390736008" ;
+         :unit "/min" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#HRZone3
+:HRZone3 rdf:type owl:DatatypeProperty ;
+         rdfs:domain :PhysicalActivity ;
+         rdfs:range xsd:integer ;
+         :snomedCode "390736008" ;
+         :unit "/min" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#HeartRate
+:HeartRate rdf:type owl:DatatypeProperty ;
+           rdfs:domain :Hemodynamics ;
+           rdfs:range xsd:float ;
+           :loincCode "8867-4" ;
+           :unit "/min" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#Height
+:Height rdf:type owl:DatatypeProperty ;
+        rdfs:domain :PhysicalExamination ;
+        rdfs:range xsd:float ;
+        :loincCode "8302-2" ;
+        :unit "cm" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#HemoLeftVentricularCardiacOutput
+:HemoLeftVentricularCardiacOutput rdf:type owl:DatatypeProperty ;
+                                  rdfs:domain :Hemodynamics ;
+                                  rdfs:range xsd:float ;
+                                  :loincCode "8741-1" ;
+                                  :unit "L/min" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#HemoLeftVentricularOutputIndex
+:HemoLeftVentricularOutputIndex rdf:type owl:DatatypeProperty ;
+                                rdfs:domain :Hemodynamics ;
+                                rdfs:range xsd:float ;
+                                :loincCode "75919-1" ;
+                                :unit "L/min/m2" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#Hemoglobin
+:Hemoglobin rdf:type owl:DatatypeProperty ;
+            rdfs:domain :BloodMarkers ;
+            rdfs:range xsd:float ;
+            :loincCode "718-7" ;
+            :unit "g/dL" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#HighBloodPressure
+:HighBloodPressure rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :PatientHistory ;
+                   rdfs:range xsd:boolean ;
+                   :snomedCode "38341003" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#Hyperinflation
+:Hyperinflation rdf:type owl:DatatypeProperty ;
+                rdfs:domain :ChestXRay ;
+                rdfs:range xsd:boolean ;
+                :loincCode "95932-0" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#Infiltrate
+:Infiltrate rdf:type owl:DatatypeProperty ;
+            rdfs:domain :ChestXRay ;
+            rdfs:range xsd:boolean ;
+            :snomedCode "95436008" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#Intense
+:Intense rdf:type owl:DatatypeProperty ;
+         rdfs:domain :PhysicalActivity ;
+         rdfs:range xsd:integer ;
+         :snomedCode "390736008" ;
+         :unit "s" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#KerleyBLines
+:KerleyBLines rdf:type owl:DatatypeProperty ;
+              rdfs:domain :ChestXRay ;
+              rdfs:range xsd:boolean ;
+              :stratifyhfCode "CXR001" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#KidneyIssues
+:KidneyIssues rdf:type owl:DatatypeProperty ;
+              rdfs:domain :PatientHistory ;
+              rdfs:range xsd:boolean ;
+              :snomedCode "709044004" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#LeftVentricularCardiacIndex
+:LeftVentricularCardiacIndex rdf:type owl:DatatypeProperty ;
+                             rdfs:domain :Echocardiography ;
+                             rdfs:range xsd:float ;
+                             :loincCode "75919-1" ;
+                             :unit "mL/min/m2" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#LeftVentricularCardiacOutput
+:LeftVentricularCardiacOutput rdf:type owl:DatatypeProperty ;
+                              rdfs:domain :Echocardiography ;
+                              rdfs:range xsd:float ;
+                              :loincCode "8741-1" ;
+                              :unit "L/min" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#LeftVentricularEjectionFraction
+:LeftVentricularEjectionFraction rdf:type owl:DatatypeProperty ;
+                                 rdfs:domain :Echocardiography ;
+                                 rdfs:range xsd:float ;
+                                 :loincCode "8806-2" ;
+                                 :unit "%" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#LeftVentricularEndDiastolicVolume
+:LeftVentricularEndDiastolicVolume rdf:type owl:DatatypeProperty ;
+                                   rdfs:domain :Echocardiography ;
+                                   rdfs:range xsd:float ;
+                                   :loincCode "18026-5" ;
+                                   :unit "mL" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#LeftVentricularEndSystolicVolume
+:LeftVentricularEndSystolicVolume rdf:type owl:DatatypeProperty ;
+                                  rdfs:domain :Echocardiography ;
+                                  rdfs:range xsd:float ;
+                                  :loincCode "18148-7" ;
+                                  :unit "mL" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#LeftVentricularHypertrophy
+:LeftVentricularHypertrophy rdf:type owl:DatatypeProperty ;
+                            rdfs:domain :Echocardiography ;
+                            rdfs:range xsd:boolean ;
+                            :snomedCode "55827005" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#LeftVentricularLongVolume
+:LeftVentricularLongVolume rdf:type owl:DatatypeProperty ;
+                           rdfs:domain :Hemodynamics ;
+                           rdfs:range xsd:float ;
+                           :loincCode "20562-5" ;
+                           :unit "mL" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#LeftVentricularStrokeVolume
+:LeftVentricularStrokeVolume rdf:type owl:DatatypeProperty ;
+                             rdfs:domain :Echocardiography ;
+                             rdfs:range xsd:float ;
+                             :loincCode "20562-5" ;
+                             :unit "mL" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#LeftVentricularStrokeVolumeIndex
+:LeftVentricularStrokeVolumeIndex rdf:type owl:DatatypeProperty ;
+                                  rdfs:domain :Echocardiography ;
+                                  rdfs:range xsd:float ;
+                                  :loincCode "76297-1" ;
+                                  :unit "mL/m2" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#LightSleepDuration
+:LightSleepDuration rdf:type owl:DatatypeProperty ;
+                    rdfs:domain :SleepQuality ;
+                    rdfs:range xsd:integer ;
+                    :stratifyhfCode "SLQ013" ;
+                    :unit "s" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#LungDisease
+:LungDisease rdf:type owl:DatatypeProperty ;
+             rdfs:domain :FamilyHistory ;
+             rdfs:range xsd:boolean ;
+             :snomedCode "266898002" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#ManualDiastolicBloodPressure
+:ManualDiastolicBloodPressure rdf:type owl:DatatypeProperty ;
+                              rdfs:domain :ManuallyInsertedMeasures ;
+                              rdfs:range xsd:integer ;
+                              :snomedCode "1162735000" ;
+                              :unit "mm[Hg]" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#ManualHeartRate
+:ManualHeartRate rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :ManuallyInsertedMeasures ;
+                 rdfs:range xsd:integer ;
+                 :snomedCode "364075005" ;
+                 :unit "/min" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#ManualOxygenSaturation
+:ManualOxygenSaturation rdf:type owl:DatatypeProperty ;
+                        rdfs:domain :ManuallyInsertedMeasures ;
+                        rdfs:range xsd:integer ;
+                        :loincCode "59408-5" ;
+                        :unit "%" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#ManualSystolicBloodPressure
+:ManualSystolicBloodPressure rdf:type owl:DatatypeProperty ;
+                             rdfs:domain :ManuallyInsertedMeasures ;
+                             rdfs:range xsd:integer ;
+                             :snomedCode "1162737008" ;
+                             :unit "mm[Hg]" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#ManualWeight
+:ManualWeight rdf:type owl:DatatypeProperty ;
+              rdfs:domain :ManuallyInsertedMeasures ;
+              rdfs:range xsd:integer ;
+              :snomedCode "726527001" ;
+              :unit "kg" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#MeanBloodPressure
+:MeanBloodPressure rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :Hemodynamics ;
+                   rdfs:range xsd:float ;
+                   :loincCode "8478-0" ;
+                   :unit "mm[Hg]" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#MitralValveRegurgitation
+:MitralValveRegurgitation rdf:type owl:DatatypeProperty ;
+                          rdfs:domain :Echocardiography ;
+                          rdfs:range xsd:boolean ;
+                          :snomedCode "48724000" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#Moderate
+:Moderate rdf:type owl:DatatypeProperty ;
+          rdfs:domain :PhysicalActivity ;
+          rdfs:range xsd:integer ;
+          :snomedCode "390736008" ;
+          :unit "s" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#NTProBNP
+:NTProBNP rdf:type owl:DatatypeProperty ;
+          rdfs:domain :BloodMarkers ;
+          rdfs:range xsd:float ;
+          :loincCode "33762-6" ;
+          :unit "pg/mL" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#NbRemEpisodes
+:NbRemEpisodes rdf:type owl:DatatypeProperty ;
+               rdfs:domain :SleepQuality ;
+               rdfs:range xsd:integer ;
+               :stratifyhfCode "SLQ011" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#OnDemandHeartRate
+:OnDemandHeartRate rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :OnDemandMeasures ;
+                   rdfs:range xsd:integer ;
+                   :snomedCode "271921002" ;
+                   :unit "/min" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#Orthopnea
+:Orthopnea rdf:type owl:DatatypeProperty ;
+           rdfs:domain :Symptoms ;
+           rdfs:range xsd:boolean ;
+           :snomedCode "62744007" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#OrthopneaFrequency
+:OrthopneaFrequency rdf:type owl:DatatypeProperty ;
+                    rdfs:domain :SymptomsLogging ;
+                    rdfs:range xsd:integer ;
+                    :snomedCode "62744007" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#OrthopneaNotes
+:OrthopneaNotes rdf:type owl:DatatypeProperty ;
+                rdfs:domain :SymptomsLogging ;
+                rdfs:range xsd:string ;
+                :snomedCode "62744007" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#OrthopneaSeverity
+:OrthopneaSeverity rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :SymptomsLogging ;
+                   rdfs:range xsd:integer ;
+                   :snomedCode "62744007" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#OutOfBedCount
+:OutOfBedCount rdf:type owl:DatatypeProperty ;
+               rdfs:domain :SleepQuality ;
+               rdfs:range xsd:integer ;
+               :stratifyhfCode "SLQ012" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#OxygenSaturation
+:OxygenSaturation rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :PhysicalExamination ;
+                  rdfs:range xsd:float ;
+                  :loincCode "59408-5" ;
+                  :unit "%" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#PRInterval
+:PRInterval rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Electrocardiography ;
+            rdfs:range xsd:float ;
+            :loincCode "8625-6" ;
+            :unit "ms" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#Palpitations
+:Palpitations rdf:type owl:DatatypeProperty ;
+              rdfs:domain :Symptoms ;
+              rdfs:range xsd:boolean ;
+              :snomedCode "80313002" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#PalpitationsFrequency
+:PalpitationsFrequency rdf:type owl:DatatypeProperty ;
+                       rdfs:domain :SymptomsLogging ;
+                       rdfs:range xsd:integer ;
+                       :snomedCode "80313002" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#PalpitationsNotes
+:PalpitationsNotes rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :SymptomsLogging ;
+                   rdfs:range xsd:string ;
+                   :snomedCode "80313002" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#PalpitationsSeverity
+:PalpitationsSeverity rdf:type owl:DatatypeProperty ;
+                      rdfs:domain :SymptomsLogging ;
+                      rdfs:range xsd:integer ;
+                      :snomedCode "80313002" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#ParticipantID
+:ParticipantID rdf:type owl:DatatypeProperty ;
+               rdfs:domain :Individual ;
+               rdfs:range xsd:string ;
+               :snomedCode "900000000000474000" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#PatientBodyMassIndex
+:PatientBodyMassIndex rdf:type owl:DatatypeProperty ;
+                      rdfs:domain :Demographics ;
+                      rdfs:range xsd:float ;
+                      :snomedCode "60621009" ;
+                      :unit "kg/m2" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#PatientChestPain
+:PatientChestPain rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :SymptomsLogging ;
+                  rdfs:range xsd:boolean ;
+                  :snomedCode "29857009" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#PatientDyspnea
+:PatientDyspnea rdf:type owl:DatatypeProperty ;
+                rdfs:domain :SymptomsLogging ;
+                rdfs:range xsd:boolean ;
+                :snomedCode "267036007" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#PatientHeartDisease
+:PatientHeartDisease rdf:type owl:DatatypeProperty ;
+                     rdfs:domain :PatientHistory ;
+                     rdfs:range xsd:boolean ;
+                     :snomedCode "49601007" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#PatientHeight
+:PatientHeight rdf:type owl:DatatypeProperty ;
+               rdfs:domain :Demographics ;
+               rdfs:range xsd:integer ;
+               :snomedCode "1153637007" ;
+               :unit "cm" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#PatientOrthopnea
+:PatientOrthopnea rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :SymptomsLogging ;
+                  rdfs:range xsd:boolean ;
+                  :snomedCode "62744007" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#PatientPalpitations
+:PatientPalpitations rdf:type owl:DatatypeProperty ;
+                     rdfs:domain :SymptomsLogging ;
+                     rdfs:range xsd:boolean ;
+                     :snomedCode "80313002" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#PatientTiredness
+:PatientTiredness rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :SymptomsLogging ;
+                  rdfs:range xsd:boolean ;
+                  :snomedCode "224960004" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#PatientWeight
+:PatientWeight rdf:type owl:DatatypeProperty ;
+               rdfs:domain :Demographics ;
+               rdfs:range xsd:float ;
+               :snomedCode "726527001" ;
+               :unit "kg" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#PeakExpiratoryFlow
+:PeakExpiratoryFlow rdf:type owl:DatatypeProperty ;
+                    rdfs:domain :Spirometry ;
+                    rdfs:range xsd:float ;
+                    :loincCode "33452-4" ;
+                    :unit "L/min" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#PeripheralOedema
+:PeripheralOedema rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :SymptomsLogging ;
+                  rdfs:range xsd:boolean ;
+                  :snomedCode "271809000" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#PeripheralOedemaFrequency
+:PeripheralOedemaFrequency rdf:type owl:DatatypeProperty ;
+                           rdfs:domain :SymptomsLogging ;
+                           rdfs:range xsd:integer ;
+                           :snomedCode "271809000" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#PeripheralOedemaNotes
+:PeripheralOedemaNotes rdf:type owl:DatatypeProperty ;
+                       rdfs:domain :SymptomsLogging ;
+                       rdfs:range xsd:string ;
+                       :snomedCode "271809000" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#PeripheralOedemaSeverity
+:PeripheralOedemaSeverity rdf:type owl:DatatypeProperty ;
+                          rdfs:domain :SymptomsLogging ;
+                          rdfs:range xsd:integer ;
+                          :snomedCode "271809000" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#Phlegm
+:Phlegm rdf:type owl:DatatypeProperty ;
+        rdfs:domain :SymptomsLogging ;
+        rdfs:range xsd:boolean ;
+        :snomedCode "52024008" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#PhlegmFrequency
+:PhlegmFrequency rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :SymptomsLogging ;
+                 rdfs:range xsd:integer ;
+                 :snomedCode "52024008" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#PhlegmNotes
+:PhlegmNotes rdf:type owl:DatatypeProperty ;
+             rdfs:domain :SymptomsLogging ;
+             rdfs:range xsd:string ;
+             :snomedCode "52024008" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#PhlegmSeverity
+:PhlegmSeverity rdf:type owl:DatatypeProperty ;
+                rdfs:domain :SymptomsLogging ;
+                rdfs:range xsd:integer ;
+                :snomedCode "52024008" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#PhysDiastolicBloodPressure
+:PhysDiastolicBloodPressure rdf:type owl:DatatypeProperty ;
+                            rdfs:domain :PhysicalExamination ;
+                            rdfs:range xsd:float ;
+                            :snomedCode "271650006" ;
+                            :unit "mm[Hg]" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#PhysHeartRate
+:PhysHeartRate rdf:type owl:DatatypeProperty ;
+               rdfs:domain :PhysicalExamination ;
+               rdfs:range xsd:float ;
+               :loincCode "8867-4" ;
+               :unit "/min" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#PhysMeanBloodPressure
+:PhysMeanBloodPressure rdf:type owl:DatatypeProperty ;
+                       rdfs:domain :PhysicalExamination ;
+                       rdfs:range xsd:float ;
+                       :loincCode "8478-0" ;
+                       :unit "mm[Hg]" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#PhysSystolicBloodPressure
+:PhysSystolicBloodPressure rdf:type owl:DatatypeProperty ;
+                           rdfs:domain :PhysicalExamination ;
+                           rdfs:range xsd:float ;
+                           :snomedCode "271649006" ;
+                           :unit "mm[Hg]" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#PhysicallyActive
+:PhysicallyActive rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :PatientHistory ;
+                  rdfs:range xsd:integer ;
+                  :snomedCode "68130003" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#PleuralEffusion
+:PleuralEffusion rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :ChestXRay ;
+                 rdfs:range xsd:boolean ;
+                 :snomedCode "60046008" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#PosturalDizziness
+:PosturalDizziness rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :Symptoms ;
+                   rdfs:range xsd:boolean ;
+                   :snomedCode "103017008" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#Potassium
+:Potassium rdf:type owl:DatatypeProperty ;
+           rdfs:domain :BloodMarkers ;
+           rdfs:range xsd:float ;
+           :loincCode "2823-3" ;
+           :unit "mmol/L" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#PulmonaryEdema
+:PulmonaryEdema rdf:type owl:DatatypeProperty ;
+                rdfs:domain :ChestXRay ;
+                rdfs:range xsd:boolean ;
+                :snomedCode "19242996" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#QRSDuration
+:QRSDuration rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Electrocardiography ;
+             rdfs:range xsd:float ;
+             :loincCode "8633-0" ;
+             :unit "ms" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#QTInterval
+:QTInterval rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Electrocardiography ;
+            rdfs:range xsd:float ;
+            :loincCode "8634-8" ;
+            :unit "ms" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#QTIntervalCorrected
+:QTIntervalCorrected rdf:type owl:DatatypeProperty ;
+                     rdfs:domain :Electrocardiography ;
+                     rdfs:range xsd:float ;
+                     :loincCode "8636-3" ;
+                     :unit "ms" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#QTIntervalCorrectedBazett
+:QTIntervalCorrectedBazett rdf:type owl:DatatypeProperty ;
+                           rdfs:domain :Electrocardiography ;
+                           rdfs:range xsd:float ;
+                           :loincCode "76635-2" ;
+                           :unit "ms" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#QTIntervalCorrectedFridericia
+:QTIntervalCorrectedFridericia rdf:type owl:DatatypeProperty ;
+                               rdfs:domain :Electrocardiography ;
+                               rdfs:range xsd:float ;
+                               :loincCode "76634-5" ;
+                               :unit "ms" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#RIskModelVersion
+:RIskModelVersion rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :RiskStratification ;
+                  rdfs:range xsd:string ;
+                  :stratifyhfCode "DAI102" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#ReasonOfMedication
+:ReasonOfMedication rdf:type owl:DatatypeProperty ;
+                    rdfs:domain :PatientHistory ;
+                    rdfs:range xsd:string ;
+                    :stratifyhfCode "PHS003" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#ResidenceCountry
+:ResidenceCountry rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :Demographics ;
+                  rdfs:range xsd:integer ;
+                  :stratifyhfCode "DMG001" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#RespiratoryRate
+:RespiratoryRate rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :PhysicalExamination ;
+                 rdfs:range xsd:float ;
+                 :loincCode "9279-1" ;
+                 :unit "/min" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#RightVentricularIntrachamberSystolicPressure
+:RightVentricularIntrachamberSystolicPressure rdf:type owl:DatatypeProperty ;
+                                              rdfs:domain :Echocardiography ;
+                                              rdfs:range xsd:float ;
+                                              :loincCode "8432-7" ;
+                                              :unit "mm[Hg]" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#RiskConsent
+:RiskConsent rdf:type owl:DatatypeProperty ;
+             rdfs:domain :RiskStratification ;
+             rdfs:range xsd:boolean ;
+             :stratifyhfCode "DAI108" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#RiskExecutionEnvironment
+:RiskExecutionEnvironment rdf:type owl:DatatypeProperty ;
+                          rdfs:domain :RiskStratification ;
+                          rdfs:range xsd:string ;
+                          :stratifyhfCode "DAI104" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#RiskExecutionTimestamp
+:RiskExecutionTimestamp rdf:type owl:DatatypeProperty ;
+                        rdfs:domain :RiskStratification ;
+                        rdfs:range xsd:dateTime ;
+                        :stratifyhfCode "DAI105" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#RiskInference
+:RiskInference rdf:type owl:DatatypeProperty ;
+               rdfs:domain :RiskStratification ;
+               rdfs:range xsd:integer ;
+               :stratifyhfCode "DAI107" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#RiskManufacturer
+:RiskManufacturer rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :RiskStratification ;
+                  rdfs:range xsd:string ;
+                  :stratifyhfCode "DAI103" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#RiskModelName
+:RiskModelName rdf:type owl:DatatypeProperty ;
+               rdfs:domain :RiskStratification ;
+               rdfs:range xsd:string ;
+               :stratifyhfCode "DAI101" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#RiskModelTrainingDate
+:RiskModelTrainingDate rdf:type owl:DatatypeProperty ;
+                       rdfs:domain :RiskStratification ;
+                       rdfs:range xsd:dateTime ;
+                       :stratifyhfCode "DAI109" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#RiskPredictedProbabilityOrConfidence
+:RiskPredictedProbabilityOrConfidence rdf:type owl:DatatypeProperty ;
+                                      rdfs:domain :RiskStratification ;
+                                      rdfs:range xsd:string ;
+                                      :stratifyhfCode "DAI106" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#SamplingFrequency
+:SamplingFrequency rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :OnDemandMeasures ;
+                   rdfs:range xsd:integer ;
+                   :snomedCode "250865004" ;
+                   :unit "Hz" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#Sex
+:Sex rdf:type owl:DatatypeProperty ;
+     rdfs:domain :Demographics ;
+     rdfs:range xsd:boolean ;
+     :snomedCode "184100006" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#SleepEfficiency
+:SleepEfficiency rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :SleepQuality ;
+                 rdfs:range xsd:integer ;
+                 :stratifyhfCode "SLQ007" ;
+                 :unit "%" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#SleepHRAverage
+:SleepHRAverage rdf:type owl:DatatypeProperty ;
+                rdfs:domain :SleepQuality ;
+                rdfs:range xsd:integer ;
+                :stratifyhfCode "SLQ015" ;
+                :unit "/min" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#SleepHRMax
+:SleepHRMax rdf:type owl:DatatypeProperty ;
+            rdfs:domain :SleepQuality ;
+            rdfs:range xsd:integer ;
+            :stratifyhfCode "SLQ017" ;
+            :unit "/min" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#SleepHRMin
+:SleepHRMin rdf:type owl:DatatypeProperty ;
+            rdfs:domain :SleepQuality ;
+            rdfs:range xsd:integer ;
+            :stratifyhfCode "SLQ016" ;
+            :unit "/min" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#SleepLatency
+:SleepLatency rdf:type owl:DatatypeProperty ;
+              rdfs:domain :SleepQuality ;
+              rdfs:range xsd:integer ;
+              :stratifyhfCode "SLQ008" ;
+              :unit "s" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#SleepScore
+:SleepScore rdf:type owl:DatatypeProperty ;
+            rdfs:domain :SleepQuality ;
+            rdfs:range xsd:integer ;
+            :stratifyhfCode "SLQ018" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#Sodium
+:Sodium rdf:type owl:DatatypeProperty ;
+        rdfs:domain :BloodMarkers ;
+        rdfs:range xsd:float ;
+        :loincCode "2951-2" ;
+        :unit "mmol/L" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#Soft
+:Soft rdf:type owl:DatatypeProperty ;
+      rdfs:domain :PhysicalActivity ;
+      rdfs:range xsd:integer ;
+      :snomedCode "390736008" ;
+      :unit "s" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#Status
+:Status rdf:type owl:DatatypeProperty ;
+        rdfs:domain :MedicationReminders ;
+        rdfs:range xsd:integer ;
+        :stratifyhfCode "MRM001" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#Steps
+:Steps rdf:type owl:DatatypeProperty ;
+       rdfs:domain :PhysicalActivity ;
+       rdfs:range xsd:integer ;
+       :snomedCode "390736008" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#Stroke
+:Stroke rdf:type owl:DatatypeProperty ;
+        rdfs:domain :FamilyHistory ;
+        rdfs:range xsd:boolean ;
+        :snomedCode "275104002" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#StrokeVOlumeIndex
+:StrokeVOlumeIndex rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :Hemodynamics ;
+                   rdfs:range xsd:float ;
+                   :loincCode "76297-1" ;
+                   :unit "mL/m2" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#SuddenDeath
+:SuddenDeath rdf:type owl:DatatypeProperty ;
+             rdfs:domain :FamilyHistory ;
+             rdfs:range xsd:boolean ;
+             :snomedCode "430283008" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#SystolicBloodPressure
+:SystolicBloodPressure rdf:type owl:DatatypeProperty ;
+                       rdfs:domain :Hemodynamics ;
+                       rdfs:range xsd:float ;
+                       :loincCode "8480-6" ;
+                       :unit "mm[Hg]" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#TakingMedications
+:TakingMedications rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :PatientHistory ;
+                   rdfs:range xsd:boolean ;
+                   :stratifyhfCode "PHS002" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#Temperature
+:Temperature rdf:type owl:DatatypeProperty ;
+             rdfs:domain :PhysicalExamination ;
+             rdfs:range xsd:float ;
+             :loincCode "8310-5" ;
+             :unit "Cel" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#Tiredness
+:Tiredness rdf:type owl:DatatypeProperty ;
+           rdfs:domain :Symptoms ;
+           rdfs:range xsd:boolean ;
+           :snomedCode "272060000" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#TirednessFrequency
+:TirednessFrequency rdf:type owl:DatatypeProperty ;
+                    rdfs:domain :SymptomsLogging ;
+                    rdfs:range xsd:integer ;
+                    :snomedCode "224960004" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#TirednessNotes
+:TirednessNotes rdf:type owl:DatatypeProperty ;
+                rdfs:domain :SymptomsLogging ;
+                rdfs:range xsd:string ;
+                :snomedCode "224960004" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#TirednessSeverity
+:TirednessSeverity rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :SymptomsLogging ;
+                   rdfs:range xsd:integer ;
+                   :snomedCode "224960004" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#Tobacco
+:Tobacco rdf:type owl:DatatypeProperty ;
+         rdfs:domain :PatientHistory ;
+         rdfs:range xsd:boolean ;
+         :snomedCode "77176002" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#TotalCalories
+:TotalCalories rdf:type owl:DatatypeProperty ;
+               rdfs:domain :PhysicalActivity ;
+               rdfs:range xsd:integer ;
+               :snomedCode "390736008" ;
+               :unit "Kcal" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#TotalSleepTime
+:TotalSleepTime rdf:type owl:DatatypeProperty ;
+                rdfs:domain :SleepQuality ;
+                rdfs:range xsd:integer ;
+                :stratifyhfCode "SLQ006" ;
+                :unit "s" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#TotalTimeInBed
+:TotalTimeInBed rdf:type owl:DatatypeProperty ;
+                rdfs:domain :SleepQuality ;
+                rdfs:range xsd:integer ;
+                :stratifyhfCode "SLQ005" ;
+                :unit "s" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#TricuspidValveAnnulusExcursionDistanceDuringSystole
+:TricuspidValveAnnulusExcursionDistanceDuringSystole rdf:type owl:DatatypeProperty ;
+                                                     rdfs:domain :Echocardiography ;
+                                                     rdfs:range xsd:float ;
+                                                     :loincCode "77903-3" ;
+                                                     :unit "mm" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#TricuspidValveRegurgitation
+:TricuspidValveRegurgitation rdf:type owl:DatatypeProperty ;
+                             rdfs:domain :Electrocardiography ;
+                             rdfs:range xsd:boolean ;
+                             :snomedCode "111287006" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#Triglyceride
+:Triglyceride rdf:type owl:DatatypeProperty ;
+              rdfs:domain :BloodMarkers ;
+              rdfs:range xsd:float ;
+              :loincCode "2571-8" ;
+              :unit "mg/dL" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#Troponin
+:Troponin rdf:type owl:DatatypeProperty ;
+          rdfs:domain :BloodMarkers ;
+          rdfs:range xsd:float ;
+          :loincCode "89579-7" ;
+          :unit "ng/L" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#Urate
+:Urate rdf:type owl:DatatypeProperty ;
+       rdfs:domain :BloodMarkers ;
+       rdfs:range xsd:float ;
+       :loincCode "3084-1" ;
+       :unit "mg/dL" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#VitalCapacity
+:VitalCapacity rdf:type owl:DatatypeProperty ;
+               rdfs:domain :Spirometry ;
+               rdfs:range xsd:float ;
+               :loincCode "19866-3" ;
+               :unit "L" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#WakeUpCount
+:WakeUpCount rdf:type owl:DatatypeProperty ;
+             rdfs:domain :SleepQuality ;
+             rdfs:range xsd:integer ;
+             :stratifyhfCode "SLQ002" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#WakeUpDuration
+:WakeUpDuration rdf:type owl:DatatypeProperty ;
+                rdfs:domain :SleepQuality ;
+                rdfs:range xsd:integer ;
+                :stratifyhfCode "SLQ001" ;
+                :unit "s" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#WakeUpLatency
+:WakeUpLatency rdf:type owl:DatatypeProperty ;
+               rdfs:domain :SleepQuality ;
+               rdfs:range xsd:integer ;
+               :stratifyhfCode "SLQ009" ;
+               :unit "s" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#Waso
+:Waso rdf:type owl:DatatypeProperty ;
+      rdfs:domain :SleepQuality ;
+      rdfs:range xsd:integer ;
+      :stratifyhfCode "SLQ010" ;
+      :unit "s" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#Weight
+:Weight rdf:type owl:DatatypeProperty ;
+        rdfs:domain :PhysicalExamination ;
+        rdfs:range xsd:float ;
+        :loincCode "29463-7" ;
+        :unit "kg" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#Wheeze
+:Wheeze rdf:type owl:DatatypeProperty ;
+        rdfs:domain :Symptoms ;
+        rdfs:range xsd:boolean ;
+        :snomedCode "56018004" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#Wheezing
+:Wheezing rdf:type owl:DatatypeProperty ;
+          rdfs:domain :SymptomsLogging ;
+          rdfs:range xsd:boolean ;
+          :snomedCode "56018004" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#WheezingFrequency
+:WheezingFrequency rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :SymptomsLogging ;
+                   rdfs:range xsd:integer ;
+                   :snomedCode "56018004" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#WheezingNotes
+:WheezingNotes rdf:type owl:DatatypeProperty ;
+               rdfs:domain :SymptomsLogging ;
+               rdfs:range xsd:string ;
+               :snomedCode "56018004" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#WheezingSeverity
+:WheezingSeverity rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :SymptomsLogging ;
+                  rdfs:range xsd:integer ;
+                  :snomedCode "56018004" .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#FEV1/FVCPostBronchodilation
+<http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#FEV1/FVCPostBronchodilation> rdf:type owl:DatatypeProperty ;
+                                                                                                     rdfs:domain :Spirometry ;
+                                                                                                     rdfs:range xsd:float ;
+                                                                                                     :loincCode "69970-2" ;
+                                                                                                     :unit "%" .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#AIPoweredModels
+:AIPoweredModels rdf:type owl:Class ;
+                 rdfs:subClassOf :Individual .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#BloodMarkers
+:BloodMarkers rdf:type owl:Class ;
+              rdfs:subClassOf :ClinicalMeasures .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#CardiacOutputResponsetoStress
+:CardiacOutputResponsetoStress rdf:type owl:Class ;
+                               rdfs:subClassOf :NewMeasures .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#ChestXRay
+:ChestXRay rdf:type owl:Class ;
+           rdfs:subClassOf :ClinicalMeasures .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#ClinicalMeasures
+:ClinicalMeasures rdf:type owl:Class ;
+                  rdfs:subClassOf :Individual .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#Demographics
+:Demographics rdf:type owl:Class ;
+              rdfs:subClassOf :MobileApp .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#Diagnosis
+:Diagnosis rdf:type owl:Class ;
+           rdfs:subClassOf :AIPoweredModels .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#Echocardiography
+:Echocardiography rdf:type owl:Class ;
+                  rdfs:subClassOf :ClinicalMeasures .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#Electrocardiography
+:Electrocardiography rdf:type owl:Class ;
+                     rdfs:subClassOf :ClinicalMeasures .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#FamilyHistory
+:FamilyHistory rdf:type owl:Class ;
+               rdfs:subClassOf :MobileApp .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#Hemodynamics
+:Hemodynamics rdf:type owl:Class ;
+              rdfs:subClassOf :ClinicalMeasures .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#Individual
+:Individual rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#ManuallyInsertedMeasures
+:ManuallyInsertedMeasures rdf:type owl:Class ;
+                          rdfs:subClassOf :MobileApp .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#MedicationReminders
+:MedicationReminders rdf:type owl:Class ;
+                     rdfs:subClassOf :MobileApp .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#MobileApp
+:MobileApp rdf:type owl:Class ;
+           rdfs:subClassOf :Individual .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#NewMeasures
+:NewMeasures rdf:type owl:Class ;
+             rdfs:subClassOf :Individual .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#OnDemandMeasures
+:OnDemandMeasures rdf:type owl:Class ;
+                  rdfs:subClassOf :MobileApp .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#Other
+:Other rdf:type owl:Class ;
+       rdfs:subClassOf :MobileApp .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#PatientHistory
+:PatientHistory rdf:type owl:Class ;
+                rdfs:subClassOf :MobileApp .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#PhysicalActivity
+:PhysicalActivity rdf:type owl:Class ;
+                  rdfs:subClassOf :MobileApp .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#PhysicalExamination
+:PhysicalExamination rdf:type owl:Class ;
+                     rdfs:subClassOf :ClinicalMeasures .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#RiskStratification
+:RiskStratification rdf:type owl:Class ;
+                    rdfs:subClassOf :AIPoweredModels .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#SleepQuality
+:SleepQuality rdf:type owl:Class ;
+              rdfs:subClassOf :MobileApp .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#Spirometry
+:Spirometry rdf:type owl:Class ;
+            rdfs:subClassOf :ClinicalMeasures .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#Symptoms
+:Symptoms rdf:type owl:Class ;
+          rdfs:subClassOf :ClinicalMeasures .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#SymptomsLogging
+:SymptomsLogging rdf:type owl:Class ;
+                 rdfs:subClassOf :MobileApp .
+
+
+###  http://www.semanticweb.org/aeral/ontologies/2025/10/stratifyhfOntology#VoiceBiomarkers
+:VoiceBiomarkers rdf:type owl:Class ;
+                 rdfs:subClassOf :NewMeasures .
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi

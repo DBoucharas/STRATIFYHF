@@ -2,9 +2,9 @@
 
 
 
-This repository contains the \*\*STRATIFYHF Heart Failure Ontology (SHFO)\*\*, a schema-level OWL ontology
+This repository contains the **STRATIFYHF Heart Failure Ontology (SHFO)**, a schema-level OWL ontology
 
-designed to support semantic harmonization of multimodal data for \*\*heart failure diagnosis and risk stratification\*\*.
+designed to support semantic harmonization of multimodal data for **heart failure diagnosis and risk stratification**.
 
 
 
@@ -36,9 +36,9 @@ reference data model to ensure clinical relevance and interoperability.
 
 
 
-\*\*Current version:\*\* 1.0.0  
+**Current version:** 1.0.0  
 
-This is the \*\*initial public release\*\* of the ontology.
+This is the **initial public release** of the ontology.
 
 
 
@@ -56,7 +56,7 @@ in the associated scientific publication.
 
 
 
-SHFO is a \*\*schema-level ontology\*\* intended for:
+SHFO is a **schema-level ontology** intended for:
 
 \- semantic harmonization,
 
@@ -66,7 +66,7 @@ SHFO is a \*\*schema-level ontology\*\* intended for:
 
 
 
-The ontology does \*\*not\*\* include instance-level data or object properties.
+The ontology does **not** include instance-level data or object properties.
 
 Instead, it focuses on:
 
@@ -122,19 +122,19 @@ to preserve semantic completeness and extensibility.
 
 
 
-The ontology currently uses a \*\*provisional namespace and IRIs\*\* that serve as stable identifiers
+The ontology currently uses a **provisional namespace and IRIs** that serve as stable identifiers
 
 for development, dissemination, and citation purposes.
 
 
 
-These IRIs are \*\*not guaranteed to resolve\*\* to web resources.
+These IRIs are **not guaranteed to resolve** to web resources.
 
 They may be updated in future releases if a permanent hosting domain is established.
 
 
 
-The \*\*canonical and authoritative source\*\* of the ontology is this Git repository.
+The **canonical and authoritative source** of the ontology is this Git repository.
 
 
 
@@ -162,7 +162,7 @@ If you use or reference this ontology, please cite:
 
 
 
-\*\*STRATIFYHF Heart Failure Ontology (SHFO), version 1.0.0\*\*  
+**STRATIFYHF Heart Failure Ontology (SHFO), version 1.0.0**  
 
 Available at: https://github.com/DBoucharas/STRATIFYHF
 
@@ -172,7 +172,7 @@ The ontology is described in the following publication:
 
 
 
-Boucharas et al., \*Semantic Harmonization of Wearable and Clinical Data for Heart Failure Diagnosis \& Risk Stratification\*, 2025.
+Boucharas et al., **Semantic Harmonization of Wearable and Clinical Data for Heart Failure Diagnosis & Risk Stratification**, 2025.
 
 
 
@@ -184,7 +184,7 @@ Boucharas et al., \*Semantic Harmonization of Wearable and Clinical Data for Hea
 
 
 
-This ontology is licensed under the \*\*Creative Commons Attribution 4.0 International (CC BY 4.0)\*\* license.
+This ontology is licensed under the **Creative Commons Attribution 4.0 International (CC BY 4.0)** license.
 
 
 
@@ -203,4 +203,5 @@ Under the following terms:
 
 
 License text: https://creativecommons.org/licenses/by/4.0/
+
 
